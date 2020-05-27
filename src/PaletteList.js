@@ -6,7 +6,7 @@ import MiniPalette from './MiniPalette';
 const styles = {
   root: {
     backgroundColor: 'blue',
-    height: '100%',
+    height: '100vh',
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'center'
@@ -40,7 +40,6 @@ class PaletteList extends Component {
         <div className={classes.container}>
           <nav className={classes.nav}>
             <h1>React Color</h1>
-
           </nav>
           <div className={classes.palettes}>
             {palettes.map(palette => (
