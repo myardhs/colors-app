@@ -1,14 +1,17 @@
 .Palette {
+  background-color: lawngreen;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 .Palette-colors {
-  height: 86%;
+  height: 88%;
+  background-color: red;
 }
 .Palette-footer {
   background-color: white;
-  height: 7%;
+  height: 5%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
