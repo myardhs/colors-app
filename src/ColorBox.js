@@ -34,7 +34,7 @@ class ColorBox extends Component {
           <Link to={moreUrl} onClick={e => e.stopPropagation()}>
             <span className="see-more">More</span>
           </Link>
-        </div>
+        </div>S
       </CopyToClipboard>
     );
   }
