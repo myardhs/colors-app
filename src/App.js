@@ -7,6 +7,7 @@ import seedColors from './seedColors';
 import Palette from './Palette';
 import PaletteList from './PaletteList';
 import { generatePalette } from './colorHelpers';
+import SingleColorPalette from './SingleColorPalette';
 import './App.css';
 
 class App extends Component { 
@@ -19,6 +20,10 @@ class App extends Component {
     return (
       <Router>
         <Switch>
+          <Route exact
+            path='/palette/:paletteId/:colorId'
+            render={() => <SingleColorPalette />} 
+          />
           <Route exact 
             path='/' 
             render={
@@ -30,10 +35,6 @@ class App extends Component {
             render={
               (routeProps) => <Palette palette={generatePalette(this.findPalette(routeProps.match.params.id))} />
             }
-          />
-          <Route exact
-            path='/palette/:paletteId/:colorId'
-            render={() => <h1>Single Color Page!</h1>} 
           />
         </Switch>
         {/* <div className="App">
