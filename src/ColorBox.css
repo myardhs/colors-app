@@ -13,7 +13,7 @@
 .ColorBox.go-back {
   background-color: black;
 }
-.copy-button, .back-button {
+.back-button {
   width: 100px;
   height: 30px;
   position: absolute;
