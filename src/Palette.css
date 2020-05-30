@@ -1,5 +1,4 @@
 .Palette {
-  background-color: lawngreen;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -8,5 +7,4 @@
 }
 .Palette-colors {
   height: 88%;
-  background-color: red;
 }
