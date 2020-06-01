@@ -72,12 +72,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function NewPaletteForm(props) {
-  const { maxColors = 20, palettes } = props;
-  const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [colors, setColors] = useState(
     props.palettes[0].colors
   );
+  const { maxColors = 20, palettes } = props;
+  const classes = useStyles();
   
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -88,12 +88,9 @@ export default function NewPaletteForm(props) {
   const addNewColor = (newColor) => {
     setColors([...colors, newColor]);
   };
-  const handleSubmit = (newPaletteName) => {
-    const newPalette = {
-      paletteName: newPaletteName,
-      id: newPaletteName.toLowerCase().replace(/ /g, '-'),
-      colors: colors
-    };
+  const handleSubmit = (newPalette) => {
+    newPalette.id = newPalette.paletteName.toLowerCase().replace(/ /g, '-');
+    newPalette.colors = colors;
     props.savePalette(newPalette);
     props.history.push('/');
   };
