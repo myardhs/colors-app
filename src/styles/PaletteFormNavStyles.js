@@ -5,6 +5,9 @@ const styles = theme => ({
   root: {
     display: 'flex'
   },
+  hide: {
+    display: 'none',
+  },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -25,6 +28,7 @@ const styles = theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    marginLeft: '10px'
   },
   navBtns: {
     marginRight: '1rem',
