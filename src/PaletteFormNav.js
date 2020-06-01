@@ -11,7 +11,7 @@ import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 
-const drawerWidth = 400;
+const drawerWidth = 350;
 const styles = theme => ({
   root: {
     display: 'flex'
@@ -23,7 +23,7 @@ const styles = theme => ({
     }),
     flexDirection: 'row',
     justifyContent: 'space-between',
-    heihgt: '64px'
+    height: '64px'
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
