@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -12,7 +11,7 @@ import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 export default function PaletteMetaForm(props) {
   const [open, setOpen] = useState(false);
   const [newPaletteName, setNewPaletteName] = useState('');
-  
+
   useEffect(() => {
     ValidatorForm.addValidationRule('isPaletteNameUnique', value =>
       props.palettes.every(
