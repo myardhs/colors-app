@@ -28,7 +28,7 @@ export default {
     }
   },
   container: {
-    width: '50%',
+    width: '70%',
     display: 'flex',
     alignItems: 'flex-start',
     flexDirection: 'column',
@@ -50,16 +50,18 @@ export default {
   palettes: {
     boxSizing: 'border-box',
     width: '100%',
+    justifyContent: 'center',
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 30%)',
-    gridGap: '2.5rem',
+    gridTemplateColumns: 'repeat(4, 21.25%)',
+    gridGap: '5%',
     [sizes.down('md')]: {
-      gridTemplateColumns: 'repeat(2, 50%)'
+      gridTemplateColumns: 'repeat(3, 30%)'
+    },
+    [sizes.down('sm')]: {
+      gridTemplateColumns: 'repeat(2, 45%)',
     },
     [sizes.down('xs')]: {
-      gridTemplateColumns: 'repeat(1, 100%)',
-      gridGap: '1.4rem'
-      
+      gridTemplateColumns: 'repeat(1, 90%)',
     }
   }
 };

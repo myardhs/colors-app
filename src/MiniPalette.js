@@ -22,11 +22,12 @@ class MiniPalette extends PureComponent {
       emoji, 
       colors
     } = this.props;
-    console.log('rendering: ', paletteName);
     const miniColorBoxes = colors.map(color => (
-      <div className={classes.miniColor} 
+      <div 
+        className={classes.miniColor} 
         style={{backgroundColor: color.color}}
-        key={color.name} />
+        key={color.name} 
+      />
     ));
     return (
       <div className={classes.root} onClick={this.handleClick}>

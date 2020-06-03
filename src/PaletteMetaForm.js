@@ -6,9 +6,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
-import 'emoji-mart/css/emoji-mart.css'
-import { Picker } from 'emoji-mart'
-
+import 'emoji-mart/css/emoji-mart.css';
+import { Picker } from 'emoji-mart';
 
 export default function PaletteMetaForm(props) {
   const [stage, setStage] = useState('form');
@@ -33,13 +32,6 @@ export default function PaletteMetaForm(props) {
     props.handleSubmit(newPalette);
     setStage('');
   };
-  // const handleClickOpen = () => {
-  //   setOpen(true);
-  // };
-
-  // const handleClose = () => {
-  //   setOpen(false);
-  // };
 
   return (
     <div>

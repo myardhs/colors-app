@@ -12,13 +12,14 @@ import {arrayMove} from 'react-sortable-hoc';
 import PaletteFormNav from './PaletteFormNav';
 import ColorPickerForm from './ColorPickerForm';
 import styles from './styles/NewPaletteFormStyles';
+import seedColors from './seedColors';
 
 const useStyles = makeStyles(styles);
 
 export default function NewPaletteForm(props) {
   const [open, setOpen] = useState(false);
   const [colors, setColors] = useState(
-    props.palettes[0].colors
+    seedColors[0].colors
   );
   const { maxColors = 20, palettes } = props;
   const classes = useStyles();

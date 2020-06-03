@@ -13,7 +13,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
 import MiniPalette from './MiniPalette';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
+import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import styles from './styles/PaletteListStyles';
 
 class PaletteList extends Component {
@@ -58,11 +58,11 @@ class PaletteList extends Component {
                 classNames='fade'
                 timeout={2000}
               >
-                <MiniPalette {...palette} 
+                <MiniPalette 
+                  {...palette} 
                   key={palette.id}
                   id={palette.id}
                   goToPalette={this.goToPalette}
-                  // handleDelete={deletePalette}
                   openDialog={this.openDialog}
                 />
               </CSSTransition>

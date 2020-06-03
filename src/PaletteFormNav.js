@@ -15,8 +15,7 @@ import styles from './styles/PaletteFormNavStyles';
 class PaletteFormNav extends Component {
   constructor(props){
     super(props);
-    this.state = { 
-      // newPaletteName: '',
+    this.state = {
       formShowing: false
     };
     this.handleChange = this.handleChange.bind(this);
@@ -36,7 +35,7 @@ class PaletteFormNav extends Component {
   }
   render() {
     const {classes, open, palettes, handleSubmit, handleDrawerOpen} = this.props;
-    // const {newPaletteName} = this.state;
+    const {formShowing} = this.state;
     return (
       <div className={classes.root}>
         <CssBaseline />
@@ -81,7 +80,7 @@ class PaletteFormNav extends Component {
             </Button>
           </div>
         </AppBar>
-        {this.state.formShowing && ( 
+        {formShowing && ( 
           <PaletteMetaForm 
             palettes={palettes} 
             handleSubmit={handleSubmit}
