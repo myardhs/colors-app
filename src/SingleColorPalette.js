@@ -10,7 +10,6 @@ class SingleColorPalette extends Component {
   constructor(props){
     super(props);
     this._shades = this.gatherShades(this.props.palette, this.props.colorId);
-    console.log(this._shades);
     this.state = { format: 'hex' };
     this.changeFormat = this.changeFormat.bind(this);
   }
