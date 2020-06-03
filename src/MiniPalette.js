@@ -1,41 +1,49 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { withStyles } from '@material-ui/styles';
 import styles from './styles/MiniPaletteStyles';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-function MiniPalette(props) {
-  const {
-    classes, 
-    paletteName, 
-    emoji, 
-    colors, 
-    handleClick
-  } = props;
-  const miniColorBoxes = colors.map(color => (
-    <div className={classes.miniColor} 
-      style={{backgroundColor: color.color}}
-      key={color.name} />
-  ));
-  const deletePalette = (e) => {
+class MiniPalette extends PureComponent {
+  constructor(props){
+    super(props);
+    this.deletePalette = this.deletePalette.bind(this);
+  }
+  deletePalette(e) {
     e.stopPropagation();
-    props.openDialog(props.id);
+    this.props.openDialog(this.props.id);
   };
-  return (
-    <div className={classes.root} onClick={handleClick}>
-      <div className={classes.delete}>
+  handleClick(){
+    this.props.goToPalette(this.props.id);
+  }
+  render() {
+    const {
+      classes, 
+      paletteName, 
+      emoji, 
+      colors
+    } = this.props;
+    console.log('rendering: ', paletteName);
+    const miniColorBoxes = colors.map(color => (
+      <div className={classes.miniColor} 
+        style={{backgroundColor: color.color}}
+        key={color.name} />
+    ));
+    return (
+      <div className={classes.root} onClick={this.handleClick}>
         <DeleteIcon 
           className={classes.deleteIcon} 
-          onClick={deletePalette}
+          onClick={this.deletePalette}
         />
+        <div className={classes.colors}>
+          {miniColorBoxes}
+        </div>
+        <h5 className={classes.title}>
+          {paletteName} <span className={classes.emoji}>{emoji}</span>
+        </h5>
       </div>
-      <div className={classes.colors}>
-        {miniColorBoxes}
-      </div>
-      <h5 className={classes.title}>
-        {paletteName} <span className={classes.emoji}>{emoji}</span>
-      </h5>
-    </div>
-  );
+    );
+  }
 }
+  
 
 export default withStyles(styles)(MiniPalette);
