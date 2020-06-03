@@ -16,10 +16,17 @@ function MiniPalette(props) {
       style={{backgroundColor: color.color}}
       key={color.name} />
   ));
+  const deletePalette = (e) => {
+    e.stopPropagation();
+    props.handleDelete(props.id);
+  };
   return (
     <div className={classes.root} onClick={handleClick}>
       <div className={classes.delete}>
-        <DeleteIcon className={classes.deleteIcon} />
+        <DeleteIcon 
+          className={classes.deleteIcon} 
+          onClick={deletePalette}
+        />
       </div>
       <div className={classes.colors}>
         {miniColorBoxes}
